@@ -3,62 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="carta de amor2.css">
   <title>Diego & Eyshila</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #f9c5d1, #fbc2eb);
-      color: #fff;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px 20px;
-      font-size: 2.5em;
-      font-weight: bold;
-      text-shadow: 2px 2px 6px #000;
-    }
-
-    .section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 40px 20px;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .section img {
-      max-width: 90%;
-      max-height: 70vh;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-
-    .frase {
-      margin-top: 20px;
-      font-size: 1.5em;
-      text-align: center;
-      text-shadow: 1px 1px 3px #000;
-    }
-
-    audio {
-      position: fixed;
-      bottom: 10px;
-      left: 10px;
-      z-index: 10;
-    }
-  </style>
 </head>
 <body>
 
@@ -66,12 +12,12 @@
 
   <!-- Seções com imagem + frase -->
   <div class="section">
-    <img src="IMG-20250605-WA0012.jpg" alt="Foto 1" />
+    <img src="IMG-20250605-WA0013.jpg" alt="Foto 1" />
     <div class="frase">"Você é o meu sorriso mais sincero."</div>
   </div>
 
   <div class="section">
-    <img src="IMG-20250605-WA0013.jpg" alt="Foto 2" />
+    <img src="IMG-20250605-WA0012.jpg" alt="Foto 2" />
     <div class="frase">"Nos teus braços é onde eu me sinto em casa."</div>
   </div>
 
@@ -80,14 +26,26 @@
     <div class="frase">"Cada momento com você é eterno."</div>
   </div>
 
-  <!-- Adicione mais blocos conforme quiser até img12.jpg -->
+   <div class="section">
+    <img src="IMG-20250605-WA0015.jpg" alt="Foto 3" />
+    <div class="frase">"Cada vez que olho para você é como se eu tivesse olhando uma aurea boreal."</div>
+  </div>
 
-  <audio autoplay loop controls>
-    <source src="musica.mp3" type="audio/mpeg" />
+  <!-- Música -->
+  <audio id="musica" autoplay loop>
+    <source src="golden hour.mp3" type="audio/mpeg" />
     Seu navegador não suporta áudio.
   </audio>
 
   <script>
+    // Tenta tocar a música assim que a página carrega
+    window.addEventListener('load', () => {
+      const audio = document.getElementById('musica');
+      audio.play().catch(() => {
+        console.log("Autoplay com som foi bloqueado. O usuário precisa interagir com a página.");
+      });
+    });
+
     // Função para revelar seções ao rolar
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
