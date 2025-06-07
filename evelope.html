@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Eyshila 💌</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #ffe5ec;
+      font-family: 'Great Vibes', cursive;
+      overflow: hidden;
+    }
+    .envelope-container {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to bottom, #ffccd5, #ffe5ec);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      animation: fadeOut 2s ease-in-out 5s forwards;
+    }
+    .envelope {
+      width: 300px;
+      height: 200px;
+      background: #fff;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .envelope::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: #ff4d6d;
+      transform: rotate(45deg);
+      transform-origin: top left;
+    }
+    .message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5rem;
+      color: #c9184a;
+    }
+    .hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+    .heart {
+      position: absolute;
+      color: #ff4d6d;
+      font-size: 2rem;
+      animation: float 4s linear infinite;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-300px) scale(1.5);
+        opacity: 0;
+      }
+    }
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: none;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      opacity: 0;
+      animation: showIframe 2s ease-in-out 5s forwards;
+    }
+    @keyframes showIframe {
+      to {
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="envelope-container">
+    <div class="envelope">
+      <div class="message">Para: Eyshila 💌</div>
+      <div class="hearts">
+        <div class="heart" style="left: 10%; animation-delay: 0s;">❤️</div>
+        <div class="heart" style="left: 25%; animation-delay: 0.5s;">💕</div>
+        <div class="heart" style="left: 40%; animation-delay: 1s;">💖</div>
+        <div class="heart" style="left: 55%; animation-delay: 1.5s;">💘</div>
+        <div class="heart" style="left: 70%; animation-delay: 2s;">💝</div>
+        <div class="heart" style="left: 85%; animation-delay: 2.5s;">💞</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- A cartinha verdadeira carrega aqui -->
+  <iframe src="carta de amor2 .html"></iframe>
+</body>
+</html>
